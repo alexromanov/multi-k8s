@@ -27,7 +27,7 @@
     "fs-extra": "7.0.1",
     "html-webpack-plugin": "4.0.0-alpha.2",
     "identity-obj-proxy": "3.0.0",
-    "jest": "23.6.0",
+    "jest": "24.5.0",
     "jest-pnp-resolver": "1.0.2",
     "jest-resolve": "23.6.0",
     "jest-watch-typeahead": "^0.2.1",
@@ -107,8 +107,8 @@
       "node"
     ],
     "watchPlugins": [
-      "/Users/aleksandr/Documents/projects/complex-app/client/node_modules/jest-watch-typeahead/filename.js",
-      "/Users/aleksandr/Documents/projects/complex-app/client/node_modules/jest-watch-typeahead/testname.js"
+      "/node_modules/jest-watch-typeahead/filename.js",
+      "/node_modules/jest-watch-typeahead/testname.js"
     ]
   },
   "babel": {
