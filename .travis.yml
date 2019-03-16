@@ -1,0 +1,22 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t al8xr/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run al8xr/react-test npm test -- --coverage
+
+after_success:
+  - docker build -t al8xr/complex-client ./client
+  - docker build -t al8xr/complex-nginx ./nginx
+  - docker build -t al8xr/complex-server ./server
+  - docker build -t al8xr/complex-worker ./worker
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password--stdin
+
+  - docker push al8xr/complex-client
+  - docker push al8xr/complex-nginx
+  - docker push al8xr/complex-server
+  - docker push al8xr/complex-worker
