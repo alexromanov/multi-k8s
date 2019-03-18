@@ -13,7 +13,7 @@ after_success:
   - docker build -t al8xr/complex-client ./client
   - docker build -t al8xr/complex-nginx ./nginx
   - docker build -t al8xr/complex-server ./server
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
   - docker push al8xr/complex-client
   - docker push al8xr/complex-nginx
