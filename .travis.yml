@@ -4,6 +4,10 @@ services:
   - docker
 
 before_install:
+  - curl https://sdk.cloud.google.com | bash > /dev/null;
+  - source $HOME/google-cloud-sdk/path.bash.inc
+  - gcloud components update kubectl
+  - gcloud auth activate-service-account --key-file service-accoutn.json
   - docker build -t al8xr/react-test -f ./client/Dockerfile.dev ./client
 
 script:
